@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ciurca_Radu_Lab7.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="bufnita.png"
+                SemanticProperties.Description="Cute owl!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Pagina lui Radu."
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Bufnița are dimensiuni relativ mari, ajungând la peste 61 cm si 170 cm anvergura aripilor. Bufnița este cea mai mare pasăre răpitoare de noapte, ajungând la înălțimea cuprinsă între 15 și 61 cm."
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Bufnița are dimensiuni relativ mari, ajungând la peste 61 cm si 170 cm anvergura aripilor. Bufnița este cea mai mare pasăre răpitoare de noapte, ajungând la înălțimea cuprinsă între 15 și 61 cm."
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Cumpara bufnita"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="ResetBtn"
+                Text="Reseteaza counter"
+                SemanticProperties.Hint="Resets counter"
+                Clicked="ResetCounter"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
