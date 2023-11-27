@@ -53,6 +53,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="AboutPage.xaml.cs">
 	    <DependentUpon>AboutPage.xaml</DependentUpon>
 	  </Compile>
@@ -60,6 +64,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ListEntryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
