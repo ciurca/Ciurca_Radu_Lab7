@@ -18,6 +18,13 @@ namespace Ciurca_Radu_Lab7.Data
             _database.CreateTableAsync<Product>().Wait();
             _database.CreateTableAsync<ListProduct>().Wait();
         }
+        public Task<int> DeleteProductFromShopListAsync(int productId, int shopListId)
+        {
+            return _database.Table<ListProduct>()
+                .Where(lp => lp.ProductID == productId && lp.ShopListID == shopListId)
+                .DeleteAsync();
+        }
+
         public Task<int> SaveProductAsync(Product product)
         {
             if (product.ID != 0)

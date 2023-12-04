@@ -21,7 +21,22 @@ async void OnDeleteButtonClicked(object sender, EventArgs e)
     await App.Database.DeleteShopListAsync(slist);
     await Navigation.PopAsync();
 }
-async void OnChooseButtonClicked(object sender, EventArgs e)
+    async void OnDeleteButtonItemClicked(object sender, EventArgs e)
+    {
+        var currentShopList = BindingContext as ShopList;
+        var selectedProduct = listView.SelectedItem as Product;
+
+        if (selectedProduct != null && currentShopList != null)
+        {
+            await App.Database.DeleteProductFromShopListAsync(selectedProduct.ID, currentShopList.ID);
+
+            listView.ItemsSource = await App.Database.GetListProductsAsync(currentShopList.ID);
+
+            listView.SelectedItem = null;
+        }
+    }
+
+    async void OnChooseButtonClicked(object sender, EventArgs e)
 {
     await Navigation.PushAsync(new ProductPage((ShopList)
    this.BindingContext)

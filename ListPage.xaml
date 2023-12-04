@@ -28,9 +28,12 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Detail="{Binding Description}" />
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Grid.Column="1"
+            Text="Delete Product" MaximumWidthRequest="200" Clicked="OnDeleteButtonItemClicked"></Button>
             <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300"
 Clicked="OnChooseButtonClicked"/>
         </StackLayout>
