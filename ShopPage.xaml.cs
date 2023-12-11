@@ -46,4 +46,10 @@ DistanceUnits.Kilometers);
         }
         await Map.OpenAsync(location, options);
     }
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var shop = (Shop)BindingContext;
+        await App.Database.DeleteShopAsync(shop);
+        await Navigation.PopAsync();
+    }
 }
